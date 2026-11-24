@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #8b6914;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c9a84c;
+}
+
+/* Sections */
+.snap-section {
+  min-height: 100vh;
+}
+
+/* Gold ornate border for the painting frame */
+.painting-frame {
+  position: relative;
+  padding: 12px;
+  background: linear-gradient(
+    135deg,
+    #c9a84c 0%,
+    #e8d48b 15%,
+    #c9a84c 30%,
+    #8b6914 50%,
+    #c9a84c 70%,
+    #e8d48b 85%,
+    #c9a84c 100%
+  );
+  box-shadow:
+    0 0 30px rgba(201, 168, 76, 0.3),
+    inset 0 0 20px rgba(0, 0, 0, 0.5),
+    0 8px 32px rgba(0, 0, 0, 0.6);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.painting-frame::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 2px solid rgba(139, 105, 20, 0.6);
+  pointer-events: none;
+  transition: border-color 0.8s ease;
+}
+
+.painting-frame::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border: 1px solid rgba(232, 212, 139, 0.4);
+  pointer-events: none;
+  transition: border-color 0.8s ease;
+}
+
+/* Revealed state - dark ominous frame */
+.painting-frame-revealed {
+  background: linear-gradient(
+    135deg,
+    #3a1a1a 0%,
+    #5a2a2a 15%,
+    #3a1a1a 30%,
+    #1a0a0a 50%,
+    #3a1a1a 70%,
+    #5a2a2a 85%,
+    #3a1a1a 100%
+  );
+  box-shadow:
+    0 0 30px rgba(139, 0, 0, 0.4),
+    inset 0 0 20px rgba(0, 0, 0, 0.7),
+    0 8px 32px rgba(0, 0, 0, 0.8);
+}
+
+.painting-frame-revealed::before {
+  border-color: rgba(139, 0, 0, 0.5);
+}
+
+.painting-frame-revealed::after {
+  border-color: rgba(90, 42, 42, 0.4);
+}
+
+/* Typewriter cursor animation */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.cursor-blink::after {
+  content: "▌";
+  animation: blink 1s infinite;
+  color: #c9a84c;
+}
+
+/* Fade in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Grain overlay for vintage feel */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* Essay text styling */
+.essay-text {
+  font-size: 1.05rem;
+  line-height: 2;
+  letter-spacing: 0.01em;
+  text-align: justify;
+  text-indent: 2em;
+}
+
+/* Horizontal rule ornament */
+.ornament-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ornament-divider::before,
+.ornament-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #8b6914,
+    transparent
+  );
+  transition: background 0.8s ease;
+}
+
+.ornament-divider-revealed::before,
+.ornament-divider-revealed::after {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #8b0000,
+    transparent
+  );
+}
