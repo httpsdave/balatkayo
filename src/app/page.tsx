@@ -195,7 +195,7 @@ export default function Home() {
         </div>
 
         {/* Top bar — Philippines year on the right only */}
-        <header className="absolute top-0 left-0 right-0 z-10 flex justify-end items-center px-6 md:px-12 py-5">
+        <header className="absolute top-0 left-0 right-0 z-10 flex justify-end items-center px-6 md:px-12 py-3 md:py-4">
           <p
             className="font-typewriter text-[10px] md:text-xs tracking-[0.2em] uppercase transition-colors duration-700"
             style={{ color: revealed ? "#888" : "#c9a84c" }}
@@ -208,7 +208,7 @@ export default function Home() {
         <div className="relative z-10 flex flex-col items-center px-4 w-full max-w-4xl">
           {/* Title */}
           <h1
-            className="font-serif text-5xl md:text-7xl lg:text-8xl font-bold tracking-[0.3em] md:tracking-[0.5em] uppercase mb-3 text-center transition-all duration-700"
+            className="font-serif text-3xl md:text-5xl lg:text-6xl font-bold tracking-[0.25em] md:tracking-[0.4em] uppercase mb-1.5 md:mb-2 text-center transition-all duration-700"
             style={{
               color: revealed ? "#c41e3a" : "#c9a84c",
               textShadow: revealed
@@ -221,7 +221,7 @@ export default function Home() {
 
           {/* Subtitle */}
           <p
-            className="font-serif text-sm md:text-base italic mb-6 text-center transition-all duration-700 max-w-lg"
+            className="font-serif text-xs md:text-sm italic mb-3 md:mb-4 text-center transition-all duration-700 max-w-lg"
             style={{ color: revealed ? "#aaa" : "#e8d48b" }}
           >
             {revealed
@@ -229,13 +229,13 @@ export default function Home() {
               : "What was shown. What was hidden."}
           </p>
 
-          {/* Framed painting container — A4 aspect, sized to fit viewport */}
+          {/* Framed painting container — A4 aspect, sized to fit viewport comfortably */}
           <div
             className={`painting-frame ${revealed ? "painting-frame-revealed" : ""} cursor-pointer`}
             style={{
               // Fit fully inside viewport: take the smaller of width/height constraints
-              // A4 ratio = 1 : 1.414. On mobile use 88vw wide, on desktop constrain by height.
-              width: "min(88vw, calc((100vh - 220px) / 1.414))",
+              // A4 ratio = 1 : 1.414.
+              width: "min(88vw, calc((100vh - 150px) / 1.414))",
               aspectRatio: "1 / 1.414",
             }}
             onClick={handleClick}
@@ -259,7 +259,7 @@ export default function Home() {
                 fill
                 className="object-cover transition-opacity duration-800 ease-in-out"
                 style={{ opacity: revealed ? 0 : 1 }}
-                sizes="(max-width: 768px) 88vw, 500px"
+                sizes="(max-width: 768px) 88vw, 650px"
               />
               <Image
                 src={CENTER_REALITY}
@@ -267,16 +267,14 @@ export default function Home() {
                 fill
                 className="object-cover transition-opacity duration-800 ease-in-out"
                 style={{ opacity: revealed ? 1 : 0 }}
-                sizes="(max-width: 768px) 88vw, 500px"
+                sizes="(max-width: 768px) 88vw, 650px"
               />
             </div>
           </div>
-
-
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
+        <div className="absolute bottom-3 md:bottom-4 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1">
           <p
             className="font-typewriter text-[9px] tracking-[0.2em] uppercase transition-colors duration-700"
             style={{ color: revealed ? "#666" : "#8b6914" }}
@@ -284,7 +282,7 @@ export default function Home() {
             Scroll to read
           </p>
           <div
-            className="w-5 h-8 rounded-full border flex items-start justify-center p-1 transition-colors duration-700"
+            className="w-4 h-7 rounded-full border flex items-start justify-center p-1 transition-colors duration-700"
             style={{
               borderColor: revealed
                 ? "rgba(139, 0, 0, 0.4)"
