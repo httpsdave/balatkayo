@@ -94,17 +94,18 @@ This is what was hidden behind the gold frames and crystal chandeliers. This is 
 
 export default function Home() {
   const [revealed, setRevealed] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
   const essaySectionRef = useRef<HTMLElement>(null);
   const [essayVisible, setEssayVisible] = useState(false);
   const [zoomed, setZoomed] = useState(false);
-  const lastTapRef = useRef<number>(0);
+  const clickTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
+  // Clean up any pending click timeout on unmount
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
+    return () => {
+      if (clickTimeoutRef.current) {
+        clearTimeout(clickTimeoutRef.current);
+      }
+    };
   }, []);
 
   // Intersection observer for essay section
@@ -124,19 +125,21 @@ export default function Home() {
     };
   }, []);
 
-  // Single click/tap → toggle reveal on ALL devices
-  // Double click/tap → zoom whatever is currently shown
+  // Single click/tap → toggle reveal after delay
+  // Double click/tap → zoom current image immediately without toggling
   const handleClick = useCallback(() => {
-    const now = Date.now();
-    const DOUBLE_TAP_MS = 300;
-    if (now - lastTapRef.current < DOUBLE_TAP_MS) {
-      // double click/tap → zoom (don't also toggle)
+    if (clickTimeoutRef.current) {
+      // Second click inside the timeout window -> cancel single-click toggle and zoom!
+      clearTimeout(clickTimeoutRef.current);
+      clickTimeoutRef.current = null;
       setZoomed(true);
     } else {
-      // single click/tap → toggle reveal
-      setRevealed((prev) => !prev);
+      // First click: wait for potential second click before toggling
+      clickTimeoutRef.current = setTimeout(() => {
+        setRevealed((prev) => !prev);
+        clickTimeoutRef.current = null;
+      }, 280);
     }
-    lastTapRef.current = now;
   }, []);
 
   const essay = revealed ? ESSAY_REALITY : ESSAY_FACADE;
@@ -269,19 +272,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Instruction text */}
-          <p
-            className="font-typewriter text-[10px] md:text-xs tracking-[0.25em] uppercase mt-4 transition-colors duration-700 text-center"
-            style={{ color: revealed ? "#c41e3a" : "#c9a84c" }}
-          >
-            {isMobile
-              ? revealed
-                ? "Tap to see the disguise · Double-tap to zoom"
-                : "Tap to reveal the truth · Double-tap to zoom"
-              : revealed
-                ? "Click to see the disguise · Double-click to zoom"
-                : "Click to reveal the other side · Double-click to zoom"}
-          </p>
+
         </div>
 
         {/* Scroll indicator */}
