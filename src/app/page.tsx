@@ -48,49 +48,66 @@ function ZoomModal({
   );
 }
 
-// --- Placeholder Unsplash images ---
-// FACADE (luxury / opulence)
-const BG_FACADE =
-  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80&auto=format&fit=crop";
-const CENTER_FACADE =
-  "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80&auto=format&fit=crop";
+// FACADE (Balatkayo)
+const BG_FACADE = "/malacanang.jpg";
+const CENTER_FACADE = "/imelda.png";
 
-// REALITY (poverty / harsh truth)
-const BG_REALITY =
-  "https://images.unsplash.com/photo-1504439468489-c8920d796a29?w=1920&q=80&auto=format&fit=crop";
-const CENTER_REALITY =
-  "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1200&q=80&auto=format&fit=crop";
+// REALITY (Katotohanan)
+const BG_REALITY = "/malacanang2.png";
+const CENTER_REALITY = "/marocs.png";
 
-// --- Placeholder essay content ---
 const ESSAY_FACADE = {
   title: "The Image of Grandeur",
-  subtitle:
-    "An exploration of the carefully curated display of wealth and power during the Marcos era in the Philippines.",
-  body: `The Marcos regime, spanning from 1965 to 1986, was remarkable not only for its duration but for the elaborate theater of opulence it constructed. Ferdinand and Imelda Marcos fashioned themselves as the embodiment of Filipino aspiration—beautiful, cultured, and impossibly wealthy. The Malacañang Palace became a stage upon which they performed their vision of national greatness, hosting lavish state dinners where crystal chandeliers cast golden light over tables laden with European delicacies.
-
-Imelda Marcos, in particular, became the architect of this grand illusion. Her collection of three thousand pairs of shoes became legendary, but it was merely a footnote in an inventory of excess that included vast real estate holdings, priceless art collections, and jewelry that could ransom nations. The Cultural Center of the Philippines, her pet project, rose from reclaimed land along Manila Bay—a monument to the idea that culture could be purchased and displayed like any other commodity.
-
-State-controlled media broadcast images of a thriving nation. Infrastructure projects—highways, bridges, convention centers—were unveiled with great ceremony. International celebrities and heads of state were invited to witness the spectacle. The Manila Film Festival, the grand balls, the state visits—each was choreographed to reinforce the narrative that the Philippines, under Marcos, was ascending to its rightful place among the world's great nations.
-
-Behind the gleaming facades of new buildings and the dazzling smiles of the First Couple lay a carefully maintained machinery of image. Every photograph was curated, every public appearance stage-managed. The conjugal dictatorship, as it came to be known, understood that power was not merely exercised—it was performed. And in this performance, the Marcos family were consummate actors, their every gesture designed to project an aura of divine right and inevitable destiny.
-
-This exhibit invites you to look beyond the gilded surface. Hover over the image above. See what was hidden behind the curtain of silk and gold. The truth has always been there, waiting to be seen.`,
+  subtitle: "",
+  body: "",
 };
 
 const ESSAY_REALITY = {
-  title: "The Hidden Truth",
-  subtitle:
-    "The reality of martial law: systematic torture, enforced disappearances, and a nation plundered from within.",
-  body: `Behind every chandelier was a detention cell. For every state banquet, thousands went hungry. The Marcos regime's greatest achievement was not its infrastructure or its cultural projects—it was the systematic suppression of truth. When Ferdinand Marcos declared Martial Law on September 21, 1972, he did not merely suspend civil liberties—he inaugurated an era of state terror that would claim the lives, freedom, and dignity of tens of thousands of Filipinos.
+  title: "The Changing Face of Power: Beauty, Bodies, and Representation",
+  subtitle: "from Martial Law to the Digital Age",
+  body: `Beauty is often treated as a personal choice, but who gets to decide what is beautiful? For Filipino women, this question extends beyond physical appearance to the expectations imposed by society, media, and those in positions of power. Growing up in the digital age, I have become increasingly aware of how social media can be both a platform for self-expression and a space for constant judgment. From beauty filters and curated photographs to unsolicited comments about physical appearance, the pressure to look a certain way remains difficult to escape. Looking back at the Martial Law period, I recognized that the relationship between beauty and power is a concept that has existed for a long time already; it just currently seems somewhat discreet. Although the ways women's bodies are judged and controlled have changed, the standards imposed on them continue to influence how they present and perceive themselves.
 
-The human rights organization Amnesty International documented over 3,257 known extrajudicial killings during the Marcos years. More than 35,000 were tortured. Some 77,000 were detained, many without charges, in military camps where electric shock, water torture, and sexual violence were routine interrogation methods. The desaparecidos—the disappeared—number in the hundreds, their families left with nothing but silence and the unending ache of not knowing.
+Beauty has never been entirely personal; it has always been political.
 
-While Imelda shopped in New York and Rome, entire communities in the provinces were displaced by military operations. Indigenous peoples in the Cordilleras and Mindanao were driven from their ancestral lands. Student activists were pulled from their dormitories in the dead of night. Journalists who dared to write the truth were imprisoned or killed. Labor leaders who organized for fair wages found themselves facing military tribunals.
+In The Mattering of National Bodies and Sexualities, Rolando B. Tolentino (2000) illustrates how the Marcoses used bodily images to reinforce their political authority. Ferdinand Marcos projected masculine strength and discipline, while Imelda Marcos embodied beauty, elegance, and extravagance. Her carefully cultivated femininity became part of the regime's political spectacle, projecting sophistication and national progress while ordinary Filipinos experienced poverty and repression. This contradiction becomes even more apparent in Imelda's war of beautification, which Benedicto (2015) examines in relation to urban displacement and the exclusion of marginalized communities. Meanwhile, Forbes (2015) discusses the regime's suppression of press freedom and the control of public narratives. The Marcoses did not simply dictate how the nation should look; they attempted to dictate what the nation was allowed to see. Their politics of appearance celebrated the beauty of the powerful while concealing the suffering of the masses.
 
-The economic plunder was equally devastating. The Marcos family and their cronies systematically looted the national treasury, amassing an estimated five to ten billion dollars in ill-gotten wealth. Coconut and sugar monopolies devastated farmers. Behest loans enriched allies while burdening the nation with crippling debt. By the time the Marcoses fled to Hawaii in 1986, the Philippines was one of the poorest nations in Asia, its economy hollowed out by two decades of kleptocracy.
+This relationship between representation and control remains relevant in contemporary digital culture, although its mechanisms are different. Social media has given individuals greater opportunities to construct and establish their own images, but this freedom comes with constant exposure to judgment and comparison. Gill (2007) explains how contemporary media encourages women to monitor their appearances under the language of personal choice and empowerment. I see this in how beauty trends, filters, and social media profiles influence the way people perceive themselves and others. Gamboa et al. (2023) examined how social media use influences the way young Filipino women view their bodies and compare their appearances with others. Their research highlights how constant exposure to images and beauty standards online can contribute to body dissatisfaction and shape how women perceive their own appearance. Artificial intelligence further intensifies these pressures through tools that modify facial features, smooth skin, and generate idealized appearances. Dijkslag et al. (2024) found that beautifying augmented-reality filters can negatively affect young women's body satisfaction. Even generative AI can reproduce gender stereotypes (UNESCO, 2024). We are no longer simply comparing ourselves with other people, but we are also increasingly comparing ourselves with digitally manufactured ideals that do not even exist.
 
-This is what was hidden behind the gold frames and crystal chandeliers. This is the Philippines that the world was not meant to see. Remember: the most dangerous lie is the one wrapped in beauty.`,
+The connection between Martial Law and the digital age lies in how power influences which bodies and appearances are considered desirable and worthy of visibility. During the Marcos regime, beauty and femininity were deliberately incorporated into political propaganda, while media censorship and authoritarian control suppressed representations that challenged the government's desired image. Today, algorithms, commercial interests, beauty trends, and public opinion influence which representations receive attention and approval. As Banet-Weiser (2018) argues, messages of female empowerment can coexist with persistent misogyny. Women are encouraged to embrace individuality while simultaneously being pressured to conform to socially accepted standards. We have moved from a regime that manufactured an ideal image of the nation to a digital culture that encourages individuals to manufacture ideal versions of themselves. Nevertheless, these platforms can also become spaces of resistance, allowing women to challenge conventional beauty standards, reclaim their bodies, and represent themselves beyond prescribed ideals. I suppose that is one advantage that digital platforms offer, completely different from the little spaces of resistance and representation available during the Martial Law.
+
+Ultimately, the comparison between Martial Law and the digital age does not suggest that their forms of oppression are equal. Rather, it demonstrates how the politics of the body persist even as the institutions and technologies that shape them change. The Marcos regime used beauty and femininity to construct an image of national progress that concealed political repression, while contemporary digital culture and AI can turn self-expression into another demand for conformity. Recognizing this connection encourages us to question not only how women's bodies are represented, but also who controls these representations and who benefits from them. If the body was once made a spectacle for the state, it must not become a product for the algorithm or a template for artificial perfection. True agency means having the freedom to represent oneself, redefine beauty, and exist without having one's worth determined by how closely one's body meets the expectations of others.`,
 };
+
+const REFERENCES_REALITY = [
+  {
+    text: "Banet-Weiser, S. (2018). Empowered: Popular Feminism and popular misogyny. Duke University Press.",
+    url: "https://doi.org/10.1215/9781478002772",
+  },
+  {
+    text: "Benedicto, B. (2014). The queer afterlife of the postcolonial city: (Trans)gender performance and the war of beautification. Antipode, 47(3), 580–597.",
+    url: "https://doi.org/10.1111/anti.12101",
+  },
+  {
+    text: "Dijkslag, I. R., Block Santos, L., Irene, G., & Ketelaar, P. (2024). To beautify or uglify! The effects of augmented reality face filters on body satisfaction moderated by self-esteem and self-identification. Computers in Human Behavior, 159, 108343.",
+    url: "https://doi.org/10.1016/j.chb.2024.108343",
+  },
+  {
+    text: "Juangco, J. R. G., Gamboa, A. J. R., Gamboa, M. K. P., Gamboa, P. A. M., Gamboa, R. A. P., Garcia, A. L. R., Garcia, D. M. T., Garcia, E. J. C., Garcia, J. A. N., Garcia, M. P. Z., Garcia, R. C. J., Gaviola, K. G. M., & Calma-Balderrama, N. (2023). A cross-sectional study on the association between social media addiction, body image, and social comparison among young adult Filipino women aged 18-25 years old in Metro Manila. Health Sciences Journal, 12(1), 1–1.",
+    url: "https://www.ejournals.ph/article.php?id=20098",
+  },
+  {
+    text: "Gill, R. (2007). Postfeminist media culture: Elements of a sensibility. European Journal of Cultural Studies, 10(2), 147–166.",
+    url: "https://doi.org/10.1177/1367549407075898",
+  },
+  {
+    text: "Tolentino, R.B. (2000). The mattering of national bodies and sexualities. Asian Studies, 36(1), 84-110.",
+    url: "",
+  },
+  {
+    text: "UNESCO. (2024). Generative AI: UNESCO study reveals alarming evidence of regressive gender stereotypes. Unesco.Org.",
+    url: "https://www.unesco.org/en/articles/generative-ai-unesco-study-reveals-alarming-evidence-regressive-gender-stereotypes",
+  },
+];
 
 export default function Home() {
   const [revealed, setRevealed] = useState(false);
@@ -110,6 +127,7 @@ export default function Home() {
 
   // Intersection observer for essay section
   useEffect(() => {
+    if (!revealed) return;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -123,6 +141,124 @@ export default function Home() {
     return () => {
       if (el) observer.unobserve(el);
     };
+  }, [revealed]);
+
+  const essayContainerRef = useRef<HTMLDivElement>(null);
+  const wordCoordsRef = useRef<{ el: HTMLElement; x: number; y: number }[]>([]);
+  const activeWordsRef = useRef<Set<HTMLElement>>(new Set());
+
+  const updateWordCoords = useCallback(() => {
+    if (!essaySectionRef.current) return;
+    const spans =
+      essaySectionRef.current.querySelectorAll<HTMLElement>(".essay-word");
+    const coords: { el: HTMLElement; x: number; y: number }[] = [];
+    const sx = window.scrollX;
+    const sy = window.scrollY;
+    spans.forEach((el) => {
+      const r = el.getBoundingClientRect();
+      coords.push({
+        el,
+        x: r.left + r.width / 2 + sx,
+        y: r.top + r.height / 2 + sy,
+      });
+    });
+    wordCoordsRef.current = coords;
+  }, []);
+
+  useEffect(() => {
+    if (!revealed) return;
+    const timer = setTimeout(() => {
+      updateWordCoords();
+    }, 250);
+    window.addEventListener("resize", updateWordCoords);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("resize", updateWordCoords);
+    };
+  }, [revealed, essayVisible, updateWordCoords]);
+
+  const handleMouseMove = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (wordCoordsRef.current.length === 0) {
+        updateWordCoords();
+      }
+      const mx = e.pageX;
+      const my = e.pageY;
+      const RADIUS = 95;
+      const R2 = RADIUS * RADIUS;
+      const nextActive = new Set<HTMLElement>();
+
+      for (let i = 0; i < wordCoordsRef.current.length; i++) {
+        const item = wordCoordsRef.current[i];
+        const dx = item.x - mx;
+        const dy = item.y - my;
+        if (dx * dx + dy * dy <= R2) {
+          nextActive.add(item.el);
+          if (!activeWordsRef.current.has(item.el)) {
+            item.el.style.color = "#c41e3a";
+          }
+        }
+      }
+
+      activeWordsRef.current.forEach((el) => {
+        if (!nextActive.has(el)) {
+          el.style.color = "";
+        }
+      });
+
+      activeWordsRef.current = nextActive;
+    },
+    [updateWordCoords]
+  );
+
+  const handleMouseLeave = useCallback(() => {
+    activeWordsRef.current.forEach((el) => {
+      el.style.color = "";
+    });
+    activeWordsRef.current.clear();
+  }, []);
+
+  const handleTouchMove = useCallback(
+    (e: React.TouchEvent<HTMLDivElement>) => {
+      if (e.touches.length === 0) return;
+      if (wordCoordsRef.current.length === 0) {
+        updateWordCoords();
+      }
+      const touch = e.touches[0];
+      const mx = touch.pageX;
+      const my = touch.pageY;
+      const RADIUS = 95;
+      const R2 = RADIUS * RADIUS;
+      const nextActive = new Set<HTMLElement>();
+
+      for (let i = 0; i < wordCoordsRef.current.length; i++) {
+        const item = wordCoordsRef.current[i];
+        const dx = item.x - mx;
+        const dy = item.y - my;
+        if (dx * dx + dy * dy <= R2) {
+          nextActive.add(item.el);
+          if (!activeWordsRef.current.has(item.el)) {
+            item.el.style.color = "#c41e3a";
+          }
+        }
+      }
+
+      activeWordsRef.current.forEach((el) => {
+        if (!nextActive.has(el)) {
+          el.style.color = "";
+        }
+      });
+
+      activeWordsRef.current = nextActive;
+    },
+    [updateWordCoords]
+  );
+
+  const handleTouchEnd = useCallback(() => {
+    activeWordsRef.current.forEach((el) => {
+      el.style.color = "";
+    });
+    activeWordsRef.current.clear();
   }, []);
 
   // Single click/tap → toggle reveal after delay
@@ -145,8 +281,8 @@ export default function Home() {
   const essay = revealed ? ESSAY_REALITY : ESSAY_FACADE;
   const currentCenterSrc = revealed ? CENTER_REALITY : CENTER_FACADE;
   const currentCenterAlt = revealed
-    ? "The reality behind the facade"
-    : "Luxurious mansion interior";
+    ? "Katotohanan"
+    : "Balatkayo";
 
   return (
     <>
@@ -168,7 +304,7 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <Image
             src={BG_FACADE}
-            alt="Luxurious interior"
+            alt="Malacañang Palace"
             fill
             className="object-cover transition-opacity duration-1000 ease-in-out"
             style={{ opacity: revealed ? 0 : 1 }}
@@ -177,7 +313,7 @@ export default function Home() {
           />
           <Image
             src={BG_REALITY}
-            alt="Reality of poverty"
+            alt="Malacañang Palace during Martial Law"
             fill
             className="object-cover transition-opacity duration-1000 ease-in-out"
             style={{ opacity: revealed ? 1 : 0 }}
@@ -226,7 +362,7 @@ export default function Home() {
           >
             {revealed
               ? "What was hidden. What was endured."
-              : "What was shown. What was hidden."}
+              : "What was shown."}
           </p>
 
           {/* Framed painting container — A4 aspect, sized to fit viewport comfortably */}
@@ -255,7 +391,7 @@ export default function Home() {
             <div className="relative w-full h-full overflow-hidden bg-black">
               <Image
                 src={CENTER_FACADE}
-                alt="Luxurious mansion interior"
+                alt="Balatkayo - Imelda"
                 fill
                 className="object-cover transition-opacity duration-800 ease-in-out"
                 style={{ opacity: revealed ? 0 : 1 }}
@@ -263,7 +399,7 @@ export default function Home() {
               />
               <Image
                 src={CENTER_REALITY}
-                alt="The reality behind the facade"
+                alt="Katotohanan - Marcos"
                 fill
                 className="object-cover transition-opacity duration-800 ease-in-out"
                 style={{ opacity: revealed ? 1 : 0 }}
@@ -271,122 +407,185 @@ export default function Home() {
               />
             </div>
           </div>
+
+          {/* Under image container in Balatkayo: "The Image of Grandeur" */}
+          {!revealed && (
+            <p
+              className="font-serif text-sm md:text-base lg:text-lg italic tracking-[0.25em] uppercase mt-3 md:mt-4 text-center transition-all duration-700"
+              style={{
+                color: "#e8d48b",
+                textShadow: "0 0 20px rgba(201, 168, 76, 0.35)",
+              }}
+            >
+              The Image of Grandeur
+            </p>
+          )}
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-3 md:bottom-4 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1">
-          <p
-            className="font-typewriter text-[9px] tracking-[0.2em] uppercase transition-colors duration-700"
-            style={{ color: revealed ? "#666" : "#8b6914" }}
-          >
-            Scroll to read
-          </p>
-          <div
-            className="w-4 h-7 rounded-full border flex items-start justify-center p-1 transition-colors duration-700"
-            style={{
-              borderColor: revealed
-                ? "rgba(139, 0, 0, 0.4)"
-                : "rgba(201, 168, 76, 0.4)",
-            }}
-          >
+        {/* Scroll indicator — only in Katotohanan */}
+        {revealed && (
+          <div className="absolute bottom-3 md:bottom-4 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 transition-opacity duration-700">
+            <p
+              className="font-typewriter text-[9px] tracking-[0.2em] uppercase transition-colors duration-700"
+              style={{ color: "#666" }}
+            >
+              Scroll to read
+            </p>
             <div
-              className="w-1 h-2 rounded-full animate-bounce transition-colors duration-700"
+              className="w-4 h-7 rounded-full border flex items-start justify-center p-1 transition-colors duration-700"
               style={{
-                backgroundColor: revealed ? "#c41e3a" : "#c9a84c",
+                borderColor: "rgba(139, 0, 0, 0.4)",
+              }}
+            >
+              <div
+                className="w-1 h-2 rounded-full animate-bounce transition-colors duration-700"
+                style={{
+                  backgroundColor: "#c41e3a",
+                }}
+              />
+            </div>
+          </div>
+        )}
+
+        {/* Balatkayo footer marker */}
+        {!revealed && (
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-10">
+            <p className="font-typewriter text-[9px] tracking-[0.2em] uppercase text-[#5a4a2a]">
+              © Dea Goze 2026
+            </p>
+          </div>
+        )}
+      </section>
+
+      {/* ===== SECTION 2: Essay (Katotohanan) ===== */}
+      {revealed && (
+        <section
+          ref={essaySectionRef}
+          className="snap-section relative min-h-screen flex items-center justify-center py-20 md:py-32"
+        >
+          {/* Background for essay section */}
+          <div className="absolute inset-0 z-0">
+            <div
+              className="absolute inset-0 transition-colors duration-1000"
+              style={{
+                background:
+                  "linear-gradient(to bottom, #0a0000, #1a0a0a, #0a0000)",
               }}
             />
           </div>
-        </div>
-      </section>
 
-      {/* ===== SECTION 2: Essay ===== */}
-      <section
-        ref={essaySectionRef}
-        className="snap-section relative min-h-screen flex items-center justify-center py-20 md:py-32"
-      >
-        {/* Background for essay section */}
-        <div className="absolute inset-0 z-0">
-          <div
-            className="absolute inset-0 transition-colors duration-1000"
+          <article
+            className="relative z-10 w-full max-w-2xl mx-auto px-6 md:px-8"
             style={{
-              background: revealed
-                ? "linear-gradient(to bottom, #0a0000, #1a0a0a, #0a0000)"
-                : "linear-gradient(to bottom, #0a0a0a, #141210, #0a0a0a)",
+              opacity: essayVisible ? 1 : 0,
+              transform: essayVisible ? "translateY(0)" : "translateY(40px)",
+              transition: "opacity 1s ease-out, transform 1s ease-out",
             }}
-          />
-        </div>
-
-        <article
-          className="relative z-10 w-full max-w-2xl mx-auto px-6 md:px-8"
-          style={{
-            opacity: essayVisible ? 1 : 0,
-            transform: essayVisible ? "translateY(0)" : "translateY(40px)",
-            transition: "opacity 1s ease-out, transform 1s ease-out",
-          }}
-        >
-          {/* Essay ornament divider */}
-          <div
-            className={`ornament-divider ${revealed ? "ornament-divider-revealed" : ""} mb-10`}
           >
-            <span
-              className="font-serif text-lg transition-colors duration-700"
-              style={{ color: revealed ? "#c41e3a" : "#c9a84c" }}
+            {/* Essay ornament divider */}
+            <div className="ornament-divider ornament-divider-revealed mb-10">
+              <span className="font-serif text-lg text-[#c41e3a]">✦</span>
+            </div>
+
+            {/* Interactive Essay Container with word-by-word red hover */}
+            <div
+              ref={essayContainerRef}
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+              className="cursor-default select-text"
             >
-              ✦
-            </span>
-          </div>
+              <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 text-[#d4d4d4]">
+                {essay.title.split(" ").map((word, idx) => (
+                  <span
+                    key={idx}
+                    className="essay-word transition-colors duration-300"
+                  >
+                    {word}{" "}
+                  </span>
+                ))}
+              </h2>
 
-          {/* Essay title */}
-          <h2
-            className="font-serif text-3xl md:text-4xl font-bold mb-4 transition-colors duration-700"
-            style={{ color: revealed ? "#d4d4d4" : "#e8d48b" }}
-          >
-            {essay.title}
-          </h2>
+              {essay.subtitle && (
+                <p className="font-serif text-base md:text-lg italic mb-10 text-[#999]">
+                  {essay.subtitle.split(" ").map((word, idx) => (
+                    <span
+                      key={idx}
+                      className="essay-word transition-colors duration-300"
+                    >
+                      {word}{" "}
+                    </span>
+                  ))}
+                </p>
+              )}
 
-          {/* Essay subtitle */}
-          <p
-            className="font-serif text-base md:text-lg italic mb-10 transition-colors duration-700"
-            style={{ color: revealed ? "#999" : "#c9a84c" }}
-          >
-            {essay.subtitle}
-          </p>
+              {essay.body && (
+                <div className="font-typewriter essay-text text-[#b0b0b0]">
+                  {essay.body.split("\n\n").map((paragraph, i) => {
+                    const isItalic =
+                      paragraph.trim() ===
+                      "Beauty has never been entirely personal; it has always been political.";
+                    return (
+                      <p key={i} className={`mb-6 ${isItalic ? "italic" : ""}`}>
+                        {paragraph.split(" ").map((word, wordIdx) => (
+                          <span
+                            key={wordIdx}
+                            className="essay-word transition-colors duration-300"
+                          >
+                            {word}{" "}
+                          </span>
+                        ))}
+                      </p>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
 
-          {/* Essay body */}
-          <div
-            className="font-typewriter essay-text transition-colors duration-700"
-            style={{ color: revealed ? "#b0b0b0" : "#c8c0a8" }}
-          >
-            {essay.body.split("\n\n").map((paragraph, i) => (
-              <p key={i} className="mb-6">
-                {paragraph}
+            {/* Bottom ornament */}
+            <div className="ornament-divider ornament-divider-revealed mt-10">
+              <span className="font-typewriter text-[10px] tracking-[0.3em] uppercase text-[#666]">
+                Never again
+              </span>
+            </div>
+
+            {/* References Section */}
+            <section className="mt-12 pt-8 border-t border-neutral-900">
+              <h3 className="font-typewriter text-[10px] md:text-xs tracking-[0.25em] uppercase text-neutral-500 mb-6 font-semibold">
+                REFERENCES
+              </h3>
+              <div className="space-y-4 font-typewriter text-[11px] md:text-xs text-neutral-400/80 leading-relaxed text-left">
+                {REFERENCES_REALITY.map((ref, idx) => (
+                  <p key={idx} className="pl-6 -indent-6">
+                    {ref.text}
+                    {ref.url && (
+                      <>
+                        {" "}
+                        <a
+                          href={ref.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="underline underline-offset-2 break-all opacity-70 hover:opacity-100 transition-opacity"
+                        >
+                          {ref.url}
+                        </a>
+                      </>
+                    )}
+                  </p>
+                ))}
+              </div>
+            </section>
+
+            {/* Footer */}
+            <footer className="mt-16 text-center">
+              <p className="font-typewriter text-[10px] tracking-[0.2em] uppercase text-[#444]">
+                © Dea Goze 2026
               </p>
-            ))}
-          </div>
-
-          {/* Bottom ornament */}
-          <div
-            className={`ornament-divider ${revealed ? "ornament-divider-revealed" : ""} mt-10`}
-          >
-            <span
-              className="font-typewriter text-[10px] tracking-[0.3em] uppercase transition-colors duration-700"
-              style={{ color: revealed ? "#666" : "#8b6914" }}
-            >
-              {revealed ? "Never again" : "Look closer"}
-            </span>
-          </div>
-
-          {/* Footer */}
-          <footer className="mt-16 text-center">
-            <p
-              className="font-typewriter text-[10px] tracking-[0.2em] uppercase transition-colors duration-700"
-              style={{ color: revealed ? "#444" : "#5a4a2a" }}
-            >
-              Balatkayo · 2024
-            </p>
-          </footer>
-        </article>
-      </section>
+            </footer>
+          </article>
+        </section>
+      )}
     </>
   );
 }
