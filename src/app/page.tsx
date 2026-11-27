@@ -56,6 +56,8 @@ const CENTER_FACADE = "/imelda.png";
 // REALITY (Katotohanan)
 const BG_REALITY = "/malacanang2.png";
 const CENTER_REALITY = "/marocs.png";
+const NEWSPAPER_1 = "/newspaper1.jpg";
+const NEWSPAPER_2 = "/newspaper2.jpg";
 
 const ESSAY_FACADE = {
   title: "The Image of Grandeur",
@@ -457,14 +459,66 @@ export default function Home() {
           className="snap-section relative min-h-screen flex items-center justify-center py-20 md:py-32"
         >
           {/* Background for essay section */}
-          <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+            {/* Deep crimson / black base gradient */}
             <div
-              className="absolute inset-0 transition-colors duration-1000"
+              className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(to bottom, #0a0000, #1a0a0a, #0a0000)",
+                  "linear-gradient(to bottom, #0a0000 0%, #1a0404 20%, #2e0808 50%, #1a0404 80%, #0a0000 100%)",
               }}
             />
+
+            {/* Historical Newspaper 1 - Upper section */}
+            <div
+              className="absolute top-0 left-0 w-full md:w-4/5 h-[55%] opacity-[0.09] mix-blend-screen"
+              style={{
+                maskImage:
+                  "radial-gradient(ellipse at 35% 45%, black 20%, transparent 75%)",
+                WebkitMaskImage:
+                  "radial-gradient(ellipse at 35% 45%, black 20%, transparent 75%)",
+              }}
+            >
+              <Image
+                src={NEWSPAPER_1}
+                alt="Historical newspaper clipping - Martial Law"
+                fill
+                className="object-cover object-top grayscale contrast-125 brightness-95"
+                sizes="100vw"
+              />
+            </div>
+
+            {/* Historical Newspaper 2 - Lower section */}
+            <div
+              className="absolute bottom-0 right-0 w-full md:w-4/5 h-[55%] opacity-[0.09] mix-blend-screen"
+              style={{
+                maskImage:
+                  "radial-gradient(ellipse at 65% 55%, black 20%, transparent 75%)",
+                WebkitMaskImage:
+                  "radial-gradient(ellipse at 65% 55%, black 20%, transparent 75%)",
+              }}
+            >
+              <Image
+                src={NEWSPAPER_2}
+                alt="Historical newspaper clipping - Censorship & Reality"
+                fill
+                className="object-cover object-center grayscale contrast-125 brightness-95"
+                sizes="100vw"
+              />
+            </div>
+
+            {/* Prominent dark red atmospheric glow */}
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "radial-gradient(ellipse at 50% 45%, rgba(196, 30, 58, 0.22) 0%, rgba(139, 0, 0, 0.12) 55%, transparent 80%)",
+              }}
+            />
+
+            {/* Top and bottom seam fades */}
+            <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#0a0000] to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0a0000] to-transparent" />
           </div>
 
           <article
