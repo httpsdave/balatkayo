@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useEffect, useRef } from "react";
 import Image from "next/image";
+import ThanosDustImage from "./ThanosDustImage";
 
 // Zoom modal component
 function ZoomModal({
@@ -111,6 +112,7 @@ const REFERENCES_REALITY = [
 
 export default function Home() {
   const [revealed, setRevealed] = useState(false);
+  const [isDusting, setIsDusting] = useState(false);
   const essaySectionRef = useRef<HTMLElement>(null);
   const [essayVisible, setEssayVisible] = useState(false);
   const [zoomed, setZoomed] = useState(false);
@@ -264,6 +266,7 @@ export default function Home() {
   // Single click/tap → toggle reveal after delay
   // Double click/tap → zoom current image immediately without toggling
   const handleClick = useCallback(() => {
+    if (isDusting) return;
     if (clickTimeoutRef.current) {
       // Second click inside the timeout window -> cancel single-click toggle and zoom!
       clearTimeout(clickTimeoutRef.current);
@@ -276,7 +279,7 @@ export default function Home() {
         clickTimeoutRef.current = null;
       }, 280);
     }
-  }, []);
+  }, [isDusting]);
 
   const essay = revealed ? ESSAY_REALITY : ESSAY_FACADE;
   const currentCenterSrc = revealed ? CENTER_REALITY : CENTER_FACADE;
@@ -384,28 +387,18 @@ export default function Home() {
             }
             onKeyDown={(e) => {
               if (e.key === "Enter" || e.key === " ") {
-                setRevealed((prev) => !prev);
+                if (!isDusting) {
+                  setRevealed((prev) => !prev);
+                }
               }
             }}
           >
-            <div className="relative w-full h-full overflow-hidden bg-black">
-              <Image
-                src={CENTER_FACADE}
-                alt="Balatkayo - Imelda"
-                fill
-                className="object-cover transition-opacity duration-800 ease-in-out"
-                style={{ opacity: revealed ? 0 : 1 }}
-                sizes="(max-width: 768px) 88vw, 650px"
-              />
-              <Image
-                src={CENTER_REALITY}
-                alt="Katotohanan - Marcos"
-                fill
-                className="object-cover transition-opacity duration-800 ease-in-out"
-                style={{ opacity: revealed ? 1 : 0 }}
-                sizes="(max-width: 768px) 88vw, 650px"
-              />
-            </div>
+            <ThanosDustImage
+              revealed={revealed}
+              facadeSrc={CENTER_FACADE}
+              realitySrc={CENTER_REALITY}
+              onDustingChange={setIsDusting}
+            />
           </div>
 
           {/* Under image container in Balatkayo: "The Image of Grandeur" */}
