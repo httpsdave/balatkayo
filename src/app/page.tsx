@@ -118,16 +118,7 @@ export default function Home() {
   const essaySectionRef = useRef<HTMLElement>(null);
   const [essayVisible, setEssayVisible] = useState(false);
   const [zoomed, setZoomed] = useState(false);
-  const clickTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-
-  // Clean up any pending click timeout on unmount
-  useEffect(() => {
-    return () => {
-      if (clickTimeoutRef.current) {
-        clearTimeout(clickTimeoutRef.current);
-      }
-    };
-  }, []);
+  const lastClickTimeRef = useRef<number>(0);
 
   // Intersection observer for essay section
   useEffect(() => {
@@ -265,23 +256,28 @@ export default function Home() {
     activeWordsRef.current.clear();
   }, []);
 
-  // Single click/tap → toggle reveal after delay
-  // Double click/tap → zoom current image immediately without toggling
+  // Single click/tap → instant toggle with 0ms delay
+  // Quick double click/tap (< 280ms) → open full screen zoom
   const handleClick = useCallback(() => {
-    if (isDusting) return;
-    if (clickTimeoutRef.current) {
-      // Second click inside the timeout window -> cancel single-click toggle and zoom!
-      clearTimeout(clickTimeoutRef.current);
-      clickTimeoutRef.current = null;
+    const now = Date.now();
+    const timeSinceLastClick = now - lastClickTimeRef.current;
+    lastClickTimeRef.current = now;
+
+    if (timeSinceLastClick < 280) {
+      // Quick double click: revert the first click's toggle and open full screen!
+      setRevealed((prev) => !prev);
       setZoomed(true);
-    } else {
-      // First click: wait for potential second click before toggling
-      clickTimeoutRef.current = setTimeout(() => {
-        setRevealed((prev) => !prev);
-        clickTimeoutRef.current = null;
-      }, 280);
+      return;
     }
-  }, [isDusting]);
+
+    // Instant 1-click toggle (0ms latency)
+    setRevealed((prev) => !prev);
+  }, []);
+
+  const handleDoubleClick = useCallback((e: React.MouseEvent) => {
+    e.stopPropagation();
+    setZoomed(true);
+  }, []);
 
   const essay = revealed ? ESSAY_REALITY : ESSAY_FACADE;
   const currentCenterSrc = revealed ? CENTER_REALITY : CENTER_FACADE;
@@ -380,21 +376,46 @@ export default function Home() {
               aspectRatio: "1 / 1.414",
             }}
             onClick={handleClick}
+            onDoubleClick={handleDoubleClick}
             role="button"
             tabIndex={0}
             aria-label={
               revealed
-                ? "Double-click to zoom; click to see the facade"
-                : "Double-click to zoom; click to reveal the truth"
+                ? "Click to switch mode; double-click for full screen"
+                : "Click to switch mode; double-click for full screen"
             }
             onKeyDown={(e) => {
               if (e.key === "Enter" || e.key === " ") {
-                if (!isDusting) {
-                  setRevealed((prev) => !prev);
-                }
+                setRevealed((prev) => !prev);
               }
             }}
           >
+            {/* Quick full-screen expand button in corner */}
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                setZoomed(true);
+              }}
+              className="absolute top-2 right-2 z-20 w-7 h-7 rounded-full bg-black/60 hover:bg-black/90 text-white/70 hover:text-white flex items-center justify-center transition opacity-60 hover:opacity-100 backdrop-blur-xs"
+              title="Full screen view (or double-click image)"
+              aria-label="Full screen view"
+            >
+              <svg
+                className="w-3.5 h-3.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"
+                />
+              </svg>
+            </button>
+
             <ThanosDustImage
               revealed={revealed}
               facadeSrc={CENTER_FACADE}
